@@ -50,29 +50,6 @@
     </div>
 
     <audio id="audio" src="AC.mp3" preload="auto" loop></audio>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const audio = document.getElementById("audio");
-
-            // Intentar reproducir el audio al cargar la página
-            audio.play().catch(error => {
-                console.log("Autoplay bloqueado, activando mute para intentar desbloquearlo.");
-
-                // Intentar con audio silenciado primero
-                audio.muted = true;
-                audio.play().then(() => {
-                    console.log("Audio reproduciéndose en mute.");
-                    setTimeout(() => {
-                        audio.muted = false; // Activar el sonido después de 2 segundos
-                    }, 2000);
-                }).catch(error => {
-                    console.log("Aún bloqueado, se requiere interacción del usuario.");
-                });
-            });
-        });
-    </script>
-    
     <script src="script.js"></script>
 
 </body>

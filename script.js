@@ -30,6 +30,13 @@ JyS 01-19-2025 - 03-19-2025`;
     // Mostrar la tarjeta con transición
     tarjeta.classList.add('mostrar');
 
+
+    audio.volume = 0.2; 
+      // Reproducir el audio cuando se haga clic en el buzón
+      audio.play().catch(error => {
+        console.log("Autoplay bloqueado, esperando interacción del usuario.");
+    });
+
     // Limpiar el texto antes de la animación
     textoAnimado.innerHTML = '';
 
