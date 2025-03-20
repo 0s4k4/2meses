@@ -1,0 +1,263 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Gochi Hand', cursive;
+}
+
+.contenedor-principal {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.fondo-primavera {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #74e0aa 0%, #bee893 50%, #fbfeb2 100%);
+}
+
+.cielo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to bottom, #a6d8ff 0%, #74e0aa 100%);
+}
+
+.nube {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.nube-1 {
+    width: 150px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation: mover-nube 10s infinite linear;
+}
+
+.nube-2 {
+    width: 200px;
+    height: 100px;
+    top: 15%;
+    left: 50%;
+    animation: mover-nube 15s infinite linear;
+}
+
+.nube-3 {
+    width: 120px;
+    height: 60px;
+    top: 25%;
+    left: 80%;
+    animation: mover-nube 12s infinite linear;
+}
+
+@keyframes mover-nube {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.sol {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    background: #ffeb3b;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #ffeb3b;
+}
+
+.arbol {
+    position: absolute;
+    bottom: 20%;
+    width: 80px;
+    height: 150px;
+    background: #5a3a22;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.arbol-1 {
+    left: 5%;
+    transform: scale(1.2);
+}
+
+.arbol-2 {
+    right: 5%;
+    transform: scale(1.5);
+}
+
+.arbol::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: -40px;
+    width: 160px;
+    height: 120px;
+    background: #4caf50;
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cabana {
+    position: absolute;
+    bottom: 15%;
+    width: 100px;
+    height: 80px;
+    background: #dbbf9e;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.cabana-1 {
+    left: 15%;
+    bottom: 18%;
+}
+
+.flores {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 100px;
+    background: #ff69b4;
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.cesped {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: #a8e6cf6b;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+}
+
+.buzon {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    cursor: pointer;
+    color: #dbbf9e;
+    transition: transform 0.2s;
+}
+
+.buzon:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.globo {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #5a5a5a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+.tarjeta {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #fbfeb2;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background-image: url('textura-papel.jpg');
+    background-size: cover;
+    border: 2px solid #dbbf9e;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.tarjeta.mostrar {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.contenido {
+    position: relative;
+    text-align: center;
+    color: #5a5a5a;
+}
+
+.contenido h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #74e0aa;
+}
+
+.mensaje {
+    font-size: 0.9em;
+    line-height: 1.6;
+    text-align: left;
+    padding: 10px;
+}
+
+.mensaje p {
+    margin: 0;
+}
+
+.cerrar {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #bee893;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #74e0aa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar:hover {
+    background-color: #74e0aa;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .tarjeta {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .contenido h1 {
+        font-size: 1.5em;
+    }
+
+    .mensaje {
+        font-size: 0.8em;
+    }
+}

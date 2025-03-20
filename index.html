@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dos meses con mi polola :3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="audioFondo" src="AC.mp3" autoplay loop></audio>
+    <div class="contenedor-principal">
+        <div class="fondo-primavera">
+            <!-- Cielo y sol -->
+            <div class="cielo"></div>
+            <div class="sol"></div>
+
+            <!-- Nubes -->
+            <div class="nube nube-1"></div>
+            <div class="nube nube-2"></div>
+            <div class="nube nube-3"></div>
+
+            <!-- Árboles -->
+            <div class="arbol arbol-1"></div>
+            <div class="arbol arbol-2"></div>
+
+            <!-- Cabañas -->
+            <div class="cabana cabana-1"></div>
+
+
+            <!-- Césped -->
+            <div class="cesped"></div>
+
+            <!-- Buzón -->
+            <div class="buzon" onclick="mostrarTarjeta()">
+                📪
+                <div class="globo">¡Nuevo correo!</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta -->
+        <div id="tarjeta" class="tarjeta">
+            <div class="contenido">
+                <span class="cerrar" onclick="ocultarTarjeta()">&times;</span>
+                <h1>Para ti...</h1>
+                <div class="mensaje">
+                    <p id="texto-animado"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
